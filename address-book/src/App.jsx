@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import ContactForm from '/components/ContactForm';
 import ContactList from '/components/ContactList';
+import Menu from '/components/Menu';
 import { v4 as uuidv4 } from 'uuid';
 
 function App() {
@@ -26,7 +27,9 @@ function App() {
 
   return (
     <div style={{ maxWidth: '600px', margin: 'auto', padding: '2rem' }}>
-      <h1>📒 Address Book</h1>
+      <Menu />
+
+      <h1>WELCOME TO THE ROLODEX OF THE FUTURE</h1>
       <ContactForm addContact={addContact} />
 
       <input
