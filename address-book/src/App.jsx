@@ -26,21 +26,53 @@ function App() {
   });
 
   return (
-    <div style={{ maxWidth: '600px', margin: 'auto', padding: '2rem' }}>
-      <Menu />
+    <div
+      style={{
+        minHeight: '100vh',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        padding: '1rem',
+      }}
+    >
+      <div
+        style={{
+          width: '100%',
+          maxWidth: '600px',
+          background: 'white',
+          borderRadius: '1rem',
+          boxShadow: '0 4px 20px rgba(0,0,0,0.1)',
+          padding: '2rem',
+          display: 'flex',
+          flexDirection: 'column',
+          gap: '1rem',
+        }}
+      >
+        <Menu />
 
-      <h1>WELCOME TO THE ROLODEX OF THE FUTURE</h1>
-      <ContactForm addContact={addContact} />
+        <h1 style={{ textAlign: 'center', fontSize: '1.5rem', margin: '1rem 0' }}>
+          WELCOME TO THE ROLODEX OF THE FUTURE
+        </h1>
 
-      <input
-        type="text"
-        placeholder="Search contacts..."
-        value={searchTerm}
-        onChange={(e) => setSearchTerm(e.target.value)}
-        style={{ width: '100%', padding: '0.5rem', marginBottom: '1rem' }}
-      />
+        <ContactForm addContact={addContact} />
 
-      <ContactList contacts={filteredContacts} deleteContact={deleteContact} />
+        <input
+          type="text"
+          placeholder="Search contacts..."
+          value={searchTerm}
+          onChange={(e) => setSearchTerm(e.target.value)}
+          style={{
+            width: '100%',
+            padding: '0.75rem',
+            borderRadius: '0.5rem',
+            border: '1px solid #ccc',
+            outline: 'none',
+            fontSize: '1rem',
+          }}
+        />
+
+        <ContactList contacts={filteredContacts} deleteContact={deleteContact} />
+      </div>
     </div>
   );
 }

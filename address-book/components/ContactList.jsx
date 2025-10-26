@@ -9,16 +9,15 @@ function ContactList({ contacts, deleteContact }) {
     <ul style={{ listStyle: 'none', padding: 0 }}>
       {contacts.map((contact) => (
         <li key={contact.id} style={{ marginBottom: '1rem' }}>
-          <strong>{contact.name}</strong><br />
+          <span class="contactName"><strong>{contact.name}</strong></span> <button
+            onClick={() => deleteContact(contact.id)}
+            style={{ marginLeft: '2.5rem' }}
+          >
+            <span class="material-symbols-outlined">delete</span>
+          </button><br />
           ✉️ {contact.email}<br />
           📞 {contact.phone}
           <br />
-          <button
-            onClick={() => deleteContact(contact.id)}
-            style={{ marginTop: '0.5rem' }}
-          >
-            Delete
-          </button>
         </li>
       ))}
     </ul>
