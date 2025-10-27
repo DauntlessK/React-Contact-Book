@@ -16,7 +16,7 @@ function ContactForm({ addContact }) {
   };
 
   return (
-    <form onSubmit={handleSubmit} style={{ marginBottom: '1.5rem', display: 'flex', justifyContent: 'space-evenly' }}>
+    <form onSubmit={handleSubmit} style={{ marginBottom: '1.5rem', display: 'flex', justifyContent: 'space-evenly', flexWrap: 'wrap' }}>
       <input
         type="text"
         placeholder="Name"
